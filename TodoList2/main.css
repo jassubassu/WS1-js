@@ -1,11 +1,11 @@
 :root {
-    --primary: 	#ff9dbf;
-    --business: #9ecdf9;
+    --primary: 	#f693b6;
+    --business: #95c3ee;
     --personal: var(--primary);
-    --light: #EEE;
-    --grey: #888;
-    --dark: #1d3b57;
-    --danger: #e12e4b;
+    --light: rgb(41, 47, 72);
+    --grey: #dbedff;
+    --dark: #152332;
+    --danger: #c8223e;
 
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
@@ -30,7 +30,7 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 
 body {
     background: var(--light);
-    color: var(--dark);
+    color: var(--grey);
     max-width: 800px;
     margin: auto;
 }
@@ -67,8 +67,8 @@ h4 {
 
 .greeting .title,
 .greeting .title input {
-    color: var(--dark);
-    font-size: 1.5rem;
+    color: var(--grey);
+    font-size: 1.75rem;
     font-weight: 700;
 }
 
@@ -89,6 +89,7 @@ h4 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
     margin-bottom: 1.5rem;
+    color: var(--dark);
 }
 
 .create-todo .options label {
@@ -116,7 +117,7 @@ input[type="checkbox"] {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid var(--business);
+    border: 3px solid var(--business);
     box-shadow: var(--business-glow);
 }
 
@@ -240,5 +241,5 @@ input:checked ~ .bubble::after {
 /* /* jos tehtävä on tehty  */
 .todo-item.done .todo-content input {
     text-decoration: line-through;
-    color: var(--grey);
+    color: var(--dark);
 }
