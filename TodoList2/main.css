@@ -43,15 +43,15 @@ section {
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 1.125rem;
     font-weight: 400;
     margin-bottom: 0.5rem;
 }
 
 h4 {
     color: var(--grey);
-    font-size: 0.875rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
@@ -160,7 +160,7 @@ input:checked ~ .bubble::after {
 .create-todo input[type="submit"] {
     display: block;
     width: 100%;
-    font-size: 1.125rem;
+    font-size: 1.35rem;
     padding: 1rem 1.5rem;
     color: #FFF;
     background-color: var(--primary);

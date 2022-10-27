@@ -17,6 +17,14 @@ window.addEventListener('load', () => {
     newTodoForm.addEventListener('submit', e => {
         e.preventDefault();
 
+        const content = e.target.elements.content.value
+        const category = e.target.elements.category.value
+
+        if (!content) {
+            alert("Please fill out the task :)")
+            return
+        }
+
         /* haetaan sisällön tietoja */
         const todo = {
             content: e.target.elements.content.value,
@@ -65,10 +73,10 @@ function DisplayTodos () {
         span.classList.add('bubble');
 
         /*category nappulan väri */
-        if (todo.category == 'personal') {
-                span.classList.add('personal');
-        }   else {
+        if (todo.category == 'business') {
                 span.classList.add('business');
+        }   else {
+                span.classList.add('personal');
         }
 
         content.classList.add('todo-content');
@@ -114,6 +122,7 @@ function DisplayTodos () {
        /*edit nappulan toiminta */
        edit.addEventListener('click', e => {
             const input = content.querySelector('input');
+            edit.innerHTML = 'Save';
             input.removeAttribute('readonly');
             input.focus();
             input.addEventListener('blur', e => {
