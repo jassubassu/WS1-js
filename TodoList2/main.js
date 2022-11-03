@@ -1,9 +1,11 @@
 window.addEventListener('load', () => {
+    const minLength = 4;
     todos = JSON.parse(localStorage.getItem('todos')) || [];
 
     /* nimen hakeminen */
     const nameInput = document.querySelector('#name');
-    const newTodoForm = document.querySelector('#new-todo-form')
+    const newTodoForm = document.querySelector('#new-todo-form');
+    const contentInput = document.querySelector('#content');
 
     const username = localStorage.getItem('username') || '';
 
@@ -12,18 +14,38 @@ window.addEventListener('load', () => {
     /* nimen tallennus */
     nameInput.addEventListener('change', e => {
         localStorage.setItem('username', e.target.value);
-    })
+    });
 
+    /* Ajetaan pituustarkistus aina kun painetaan nappia */
+    contentInput.addEventListener('keydown', e => {
+        const content = e.target.value;
+
+        /* vertaus tapahtuu edelliseen eventtiin, joten +1 */
+        if (content.length + 1 == minLength) {
+            contentInput.classList.remove("error-text");
+            console.log(content);
+        }
+    });
+    
     newTodoForm.addEventListener('submit', e => {
         e.preventDefault();
 
-        const content = e.target.elements.content.value
-        const category = e.target.elements.category.value
+        const content = e.target.elements.content.value;
+        const category = e.target.elements.category.value;
 
+        /* alert jos on tyhjä tai liian lyhyt */
         if (!content) {
-            alert("Please fill out the task :)")
-            return
+            alert("Please fill out the task :)");
+            return;
         }
+
+        if (content.length < minLength) {
+            contentInput.classList.add("error-text");
+            alert("The task is too short! :( Min. " + (minLength) + " characters!");
+            return;
+        }
+        
+        contentInput.classList.remove("error-text");
 
         /* haetaan sisällön tietoja */
         const todo = {
@@ -53,6 +75,11 @@ function DisplayTodos () {
     const todoList = document.querySelector('#todo-list');
 
     todoList.innerHTML = '';
+
+    /* taskien määrä */
+    const todoCount = document.createElement('H1');
+    todoCount.innerText = "Number of tasks " + todos.length;
+    todoList.appendChild(todoCount);
 
     /*luodaan kaikki yhden todo osion osat */
     todos.forEach(todo => {

@@ -248,3 +248,8 @@ input:checked ~ .bubble::after {
     display: block;
     text-align: center;
 }
+
+/* virheellisen tekstin väri (yliajaa) */
+.error-text {
+    color: var(--danger) !important;
+}
