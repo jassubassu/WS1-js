@@ -1,0 +1,44 @@
+:root {
+    --primary: 	#f693b6;
+    --business: #95c3ee;
+    --personal: var(--primary);
+    --bgcolor: rgb(41, 47, 72);
+    --grey: #dbedff;
+    --dark: #152332;
+    --danger: #c8223e;
+
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    --business-glow: 0px 0px 4px rgba(149, 195, 238, 0.75);
+    --personal-glow: 0px 0px 4px rgba(246, 147, 182, 0.75);
+}
+
+body {
+    background: var(--bgcolor);
+    color: var(--grey);
+    max-width: 800px;
+    margin: auto;
+}
+
+.greeting .title {
+    display: flex;
+}
+
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+h4 {
+    color: var(--grey);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#github {
+    display: block;
+    text-align: center;
+}
