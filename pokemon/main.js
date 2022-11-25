@@ -62,7 +62,8 @@ function displayPokemons(pokemonData) {
         content.classList.add('todo-content');
 
         content.innerHTML =
-        `<h4>${pokemon.name}</h4> <img src=${pokemon.image}> <p>${pokemon.type}</p>`;
+        `<h4 id="pokemonNimi">${pokemon.name}</h4> <img id="kuva" src=${pokemon.image}>
+        <p id="pokemonTyyppi">Type: ${pokemon.type}</p>`;
 
         // lisää content pokemonitemin childiksi
 

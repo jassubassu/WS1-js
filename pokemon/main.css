@@ -1,9 +1,9 @@
 :root {
-    --primary: 	#f693b6;
-    --business: #95c3ee;
+    --primary: 	#019267;
+    --secondary: #efdc61;
     --personal: var(--primary);
-    --bgcolor: rgb(41, 47, 72);
-    --grey: #dbedff;
+    --bgcolor: #344D67;
+    --grey: #cfdfef;
     --dark: #152332;
     --danger: #c8223e;
 
@@ -15,10 +15,14 @@ body {
     color: var(--grey);
     max-width: 800px;
     margin: auto;
+    text-align: center;
 }
 
 .greeting .title {
-    display: flex;
+    text-align: center;
+    margin: auto;
+    font-size: 2.75rem;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 section {
@@ -30,12 +34,55 @@ section {
 
 h4 {
     color: var(--grey);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 550;
     margin-bottom: 0.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#pokemon-result {
+    width: 450px;
+    margin: auto;
+    border-radius: 50px;
+    border: 15px solid var(--secondary);
+    background: var(--primary)
+}
+
+#pokemonNimi {
+    font-size: 2.25rem;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:  left;
+    padding-left: 94px;
+}
+
+#pokemonNimi:first-letter {
+    text-transform: uppercase;
+}
+
+#kuva {
+    width: 300px;
+    border: 7px solid var(--secondary);
+    background-image: url("tausta.png");
+    background-position: center;
+}
+
+#pokemonTyyppi {
+    font-size: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-align:  left;
+    padding-left: 94px;
+    padding-bottom: 50px;
+}
+
+#pokemonTyyppi::first-letter {
+    text-transform: uppercase;
 }
 
 #github {
     display: block;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
