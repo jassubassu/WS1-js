@@ -36,10 +36,13 @@ async function getMoreData(pokemonData) {
 
         const elementType = pokemonData.types.map(type => type.type.name);
 
-        const imageLink = pokemonData.sprites.front_default;
+        const imageLink = pokemonData.sprites.other.dream_world.front_default;
 
+        const abilities = pokemonData.abilities.map(abilities => abilities.ability.name);
+
+        console.log(abilities);
         return {
-            image:imageLink, name:pokemon.name, type:elementType
+            image:imageLink, name:pokemon.name, type:elementType, abilities:abilities
         };
     }))
     return fillInformation.map(data => data.value);
@@ -63,7 +66,7 @@ function displayPokemons(pokemonData) {
 
         content.innerHTML =
         `<h4 id="pokemonNimi">${pokemon.name}</h4> <img id="kuva" src=${pokemon.image}>
-        <p id="pokemonTyyppi">Type: ${pokemon.type}</p>`;
+        <p id="pokemonTyyppi">Type: <br>${pokemon.type}</p> <p id="pokemonAbilities">Abilities: <br>${pokemon.abilities}</p>`;
 
         // lisää content pokemonitemin childiksi
 
