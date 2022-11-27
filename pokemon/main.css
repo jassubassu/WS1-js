@@ -8,7 +8,7 @@
 }
 
 body {
-    background: linear-gradient(105deg, #0a324a 60%, #256D85 60%);
+    background: linear-gradient(105deg, #0a324a 50%, #256D85 50%);
     color: var(--grey);
     max-width: 800px;
     margin: auto;
@@ -44,7 +44,7 @@ h4 {
     width: 36%;
     font-size: 1.5rem;
     padding: 0.5rem 0.5rem;
-    color: var(--dark);
+    color: black;
     background-color: #FFF;
     border-radius: 0.7rem;
     border: solid 4px var(--border);
